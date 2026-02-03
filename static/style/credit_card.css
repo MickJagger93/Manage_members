@@ -1,0 +1,162 @@
+body {
+    background-image: url('/static/img/Screenshot_33.png'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;           
+    margin: 0;
+    padding: 0;
+    font-family: 'Domine', sans-serif;
+}
+
+.credit-card-container {
+    max-width: 420px;
+    margin: 50px auto 60px auto;
+    padding: 40px 35px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 6px 25px rgba(42, 122, 226, 0.15);
+    color: #333;
+}
+
+/* Precio */
+.credit-card-container p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #2a7ae2;
+    text-align: center;
+}
+
+/* Contenedor para floating labels */
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+/* Campos input */
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 14px 12px 14px 12px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  background: none;
+  box-sizing: border-box;
+}
+
+/* Ocultar placeholder */
+.input-group input::placeholder {
+  color: transparent;
+}
+
+/* Etiquetas flotantes */
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  color: #999;
+  font-size: 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background-color: white;
+  padding: 0 5px;
+}
+
+/* Cuando el input está enfocado o tiene valor */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 0.8rem;
+  color: #2a7ae2;
+  font-weight: 600;
+}
+
+/* Mensajes de error */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Botón submit */
+.submit-button {
+    width: 100%;
+    padding: 14px 0;
+    margin-top: 10px;
+    background-color: #2a7ae2;
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #1b4f9e;
+}
+
+.back-link {
+    display: block;
+    margin: 40px auto 0;
+    background-color: #2a7ae2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 200px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    background-color: #1b4f9e;
+}
+
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .credit-card-container {
+        margin: 30px 15px 40px 15px;
+        padding: 30px 25px;
+        max-width: 100%;
+    }
+}
+
+.flash-message-container {
+  max-width: 400px;
+  margin: 30px auto;
+  background-color: green; /* rojo oscuro */
+  color: white;
+  border-radius: 12px;
+  padding: 18px 25px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(192, 57, 43, 0.6);
+  animation: slideUpFadeIn 0.6s ease forwards;
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flash-message-container p {
+  margin: 0;
+  font-size: 1.1rem;
+}

@@ -1,0 +1,147 @@
+body {
+    background-image: url('/static/img/Screenshot_33.png'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;           
+    margin: 0;
+    padding: 0;
+    font-family: 'Domine', sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 4em;
+    color: #2a7ae2;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+}
+
+.subs-container,
+.payment-container,
+.profile-container,
+.plans_container {
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.subs-container {
+    background-image: url('/static/img/Screenshot_34.png')
+}
+
+.payment-container {
+    background-image: url('/static/img/Screenshot_35.png')
+}
+
+.profile-container {
+    background-image: url('/static/img/Screenshot_36.png')
+}
+
+.plans_container {
+    background-image: url('/static/img/Screenshot_37.png')
+}
+
+.subs-container:hover,
+.payment-container:hover,
+.profile-container:hover,
+.plans_container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.6);
+}
+
+.subs-container a,
+.payment-container a,
+.profile-container a,
+.plans_container a {
+    display: block;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white; 
+    text-decoration: none;
+}
+
+.description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #2a7ae2;
+}
+
+.btn-style {
+    display: block;
+    margin: 40px auto 0;
+    background-color: #2a7ae2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 200px;
+    text-align: center;
+}
+
+.btn-style:hover {
+    background-color: #1b4f9e;
+}
+
+.flash-messages-container {
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+  pointer-events: none; /* para que el mensaje no interfiera con otros elementos */
+}
+
+.flash-message {
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  pointer-events: auto;
+  
+  /* Efecto emergente */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFadeIn 0.6s ease forwards;
+}
+
+/* Estilos para warnings (puedes definir más categorías como success, error, info) */
+.flash-warning {
+  background-color: #f39c12; /* naranja */
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

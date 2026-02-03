@@ -1,0 +1,19 @@
+{% extends 'layout/base_profile.html' %}
+
+{% block content %}
+
+    <div class="profile-container">
+        <h2 class="title">User profile</h2>
+
+        <p><strong>Name:</strong> {{ profile.name }}</p>
+        <p><strong>Last Name:</strong> {{ profile.last_name }}</p>
+        <p><strong>Email:</strong> {{ profile.email }}</p>
+        <p><strong>Phone:</strong> {{ profile.phone }}</p>
+        <p><strong>Address:</strong> {{ profile.address }}</p>
+        
+        <a class="edit-link" href="{{ url_for('user.edit_profile', member_id=profile.member_id) }}">Edit Profile</a>
+        <a class="back-link" href="{{ url_for('admin.dashboard') }}">Back to dashboard</a>
+    </div>
+
+
+{% endblock %}

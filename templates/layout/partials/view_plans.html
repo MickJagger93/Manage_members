@@ -1,0 +1,41 @@
+{% extends 'layout/base_view_plans.html' %}
+
+{% block content %}
+    
+    <div class="view-plans-container">
+        
+        <h2>View Plans</h2>
+
+        {% if payment %}
+            
+            <p>Actual plan: <strong>{{ payment.plan_name }}</strong></p>
+            <p>Payment status: <strong>{{ payment.status }}</strong></p>
+            <p>Subscription date: <strong>{{ payment.date.strftime('%Y-%m-%d') }}</strong></p>
+
+            <form method="post" action="{{ url_for('admin.unsubscribe', payment_id=payment.id) }}" class="unsubscribe-form">
+                {{ form.hidden_tag() }}
+                {{ form.submit(class="btn btn-danger") }}
+            </form>
+            
+        {% else %}
+        
+            <p>You do not have an active subscription.</p>
+        
+        {% endif %}
+
+        <a href="{{ url_for('admin.dashboard') }}">Back to dashboard</a>
+
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-message-container">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+{% endblock %}
+

@@ -1,0 +1,57 @@
+{% extends 'layout/base_credit_card.html' %}
+
+{% block content %}
+
+    <div class="credit-card-container">
+      
+        <p>Price: ${{ plan.price }}</p>
+
+        <form method="POST" action="{{ url_for('admin.credit_card', plan_name=plan.name) }}">
+          
+            {{ form.hidden_tag() }}
+
+            <div class="input-group">
+              {{ form.card_number(class="input-field", id="card_number", placeholder=" ") }}
+              <label for="card_number">Card Number</label>
+              {% for error in form.card_number.errors %}
+                <span class="error-message">{{ error }}</span>
+              {% endfor %}
+            </div>
+
+            <div class="input-group">
+              {{ form.expiry_date(class="input-field", id="expiry_date", placeholder=" ") }}
+              <label for="expiry_date">Expiry Date (MM/YY)</label>
+              {% for error in form.expiry_date.errors %}
+                <span class="error-message">{{ error }}</span>
+              {% endfor %}
+            </div>
+
+            <div class="input-group">
+              {{ form.cvv(class="input-field", id="cvv", placeholder=" ") }}
+              <label for="cvv">CVV</label>
+              {% for error in form.cvv.errors %}
+                <span class="error-message">{{ error }}</span>
+              {% endfor %}
+            </div>
+
+            <div>
+              {{ form.submit(class="submit-button") }}
+            </div>
+        
+        </form>
+    
+    </div>
+
+    <a class="back-link" href="{{ url_for('admin.payment_options', plan_name=plan.name) }}">Back</a>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-message-container">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+{% endblock %}

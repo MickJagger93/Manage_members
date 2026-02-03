@@ -1,0 +1,95 @@
+body {
+    background-image: url('/static/img/Screenshot_33.png'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;           
+    margin: 0;
+    padding: 0;
+    font-family: 'Domine', sans-serif;
+}
+
+.payment-receipt-container {
+    max-width: 460px;
+    margin: 60px auto 70px;
+    padding: 35px 40px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(42, 122, 226, 0.15);
+    color: #333;
+    text-align: center;
+}
+
+.payment-receipt-container h2 {
+    color: #2a7ae2;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.payment-receipt-container p {
+    font-size: 1.1rem;
+    margin: 14px 0;
+    font-weight: 500;
+    color: #444;
+}
+
+.payment-receipt-container p::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+    color: #2a7ae2;
+}
+
+.payment-receipt-container a {
+    display: inline-block;
+    margin-top: 36px;
+    background-color: #2a7ae2;
+    color: white;
+    padding: 12px 36px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-receipt-container a:hover {
+    background-color: #1b4f9e;
+}
+
+@media (max-width: 480px) {
+    .payment-receipt-container {
+        margin: 40px 20px 50px 20px;
+        padding: 30px 25px;
+        max-width: 100%;
+    }
+}
+
+.flash-message-container {
+  max-width: 400px;
+  margin: 30px auto;
+  background-color: green; /* rojo oscuro */
+  color: white;
+  border-radius: 12px;
+  padding: 18px 25px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(192, 57, 43, 0.6);
+  animation: slideUpFadeIn 0.6s ease forwards;
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flash-message-container p {
+  margin: 0;
+  font-size: 1.1rem;
+}

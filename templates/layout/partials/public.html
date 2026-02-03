@@ -1,0 +1,43 @@
+{% extends 'layout/base.html' %}
+
+{% block content %} 
+
+    <div class="member-container">
+        
+        <h2 class="title">Management Members App</h2>
+    
+        <nav class="navbar">
+            <ul>
+                <li><a class="link-register"href="{{ url_for('auth.register') }}">Register</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="parent-container">
+        <div>
+            <a class="centered-link" href="{{ url_for('auth.login') }}">Weekly</a>
+            <hr>
+            <p class="text">Price: $9.99</p>
+        </div>
+
+        <div>
+            <a class="centered-link" href="{{ url_for('auth.login') }}">Monthly</a>
+            <hr>
+            <p class="text">Price: $29.9</p>
+        </div>
+
+        <div>
+            <a class="centered-link" href="{{ url_for('auth.login') }}">Annual</a>
+            <hr>
+            <p class="text">Price $299.9</p>
+        </div>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="success-message"> {{ message }} </p>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

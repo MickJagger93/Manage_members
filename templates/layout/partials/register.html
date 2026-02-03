@@ -1,0 +1,59 @@
+{% extends 'layout/base_register.html' %}
+
+{% block content %}
+
+    <div class="register-container">
+
+        <h2 class="title">Register</h2>
+
+        <form method="POST" action="{{ url_for('auth.register') }}">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+
+                <div class="floating-label">
+                    {{ form.name(placeholder=" ") }}
+                    <label for="name">Name</label>
+                </div>
+
+                <div class="floating-label">
+                    {{ form.email(placeholder=" ") }}
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="floating-label" style="position: relative;">
+                    {{ form.password(placeholder=" ", id="password-input") }}
+                    <label for="password">Password</label>
+                </div>
+    
+                <div class="floating-label" style="position: relative;">
+                    {{ form.confirm_password(placeholder=" ", id="confirm-password-input") }}
+                    <label for="confirm_password">Confirm Password</label>
+                </div>
+
+                <button type="submit" class="btn-style">Register</button>
+
+        </form>
+
+        <p>
+            <a class="centered-link" href="{{ url_for('main.index') }}">Back to home</a>
+        </p>
+
+        {% if form.errors %}
+            {% for field, errors in form.errors.items() %}
+                {% for error in errors %}
+                    <p class="error-message">{{ field }} - {{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="success-message">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    
+        <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+
+    </div>
+
+{% endblock %}

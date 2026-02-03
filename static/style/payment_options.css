@@ -1,0 +1,85 @@
+body {
+    background-image: url('/static/img/Screenshot_33.png'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;           
+    margin: 0;
+    padding: 0;
+    font-family: 'Domine', sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 4em;
+    color: #2a7ae2;
+}
+
+.payment-options-container {
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+}
+
+.credit-card,
+.bank-transfer {
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.credit-card {
+    background-image: url('/static/img/Screenshot_39.png');
+}
+
+.bank-transfer {
+    background-image: url('/static/img/Screenshot_38.png');
+}
+
+.credit-card:hover,
+.bank-transfer:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.6);
+}
+
+.credit-card a,
+.bank-transfer a {
+    display: block;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white; 
+    text-decoration: none;
+}
+
+.description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #2a7ae2;
+}
+
+.back-link {
+    display: block;
+    margin: 40px auto 0;
+    background-color: #2a7ae2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 200px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    background-color: #1b4f9e;
+}

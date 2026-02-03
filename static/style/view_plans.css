@@ -1,0 +1,123 @@
+body {
+    background-image: url('/static/img/Screenshot_33.png'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;           
+    margin: 0;
+    padding: 0;
+    font-family: 'Domine', sans-serif;
+}
+
+.view-plans-container {
+    max-width: 480px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 18px;
+    box-shadow: 0 6px 22px rgba(42, 122, 226, 0.15);
+    color: #333;
+    text-align: center;
+}
+
+.view-plans-container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2a7ae2;
+    margin-bottom: 30px;
+}
+
+.view-plans-container p {
+    font-size: 1.1rem;
+    margin: 16px 0;
+}
+
+.view-plans-container strong {
+    color: #2a7ae2;
+}
+
+.view-plans-container p:last-child {
+    font-style: italic;
+    color: #888;
+}
+
+.view-plans-container a {
+    display: inline-block;
+    margin-top: 36px;
+    background-color: #2a7ae2;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-plans-container a:hover {
+    background-color: #1b4f9e;
+}
+
+@media (max-width: 520px) {
+    .view-plans-container {
+        margin: 30px 20px;
+        padding: 30px 25px;
+        max-width: 100%;
+    }
+}
+
+.unsubscribe-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.unsubscribe-form .btn-danger {
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(231, 76, 60, 0.4);
+}
+
+.unsubscribe-form .btn-danger:hover,
+.unsubscribe-form .btn-danger:focus {
+    background-color: #c0392b;
+    box-shadow: 0 6px 10px rgba(192, 57, 43, 0.6);
+    outline: none;
+}
+
+.flash-message-container {
+  max-width: 400px;
+  margin: 30px auto;
+  background-color: green; 
+  color: white;
+  border-radius: 12px;
+  padding: 18px 25px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(192, 57, 43, 0.6);
+  animation: slideUpFadeIn 0.6s ease forwards;
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flash-message-container p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+

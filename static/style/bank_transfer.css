@@ -1,0 +1,170 @@
+body {
+    background-image: url('/static/img/Screenshot_33.png'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;           
+    margin: 0;
+    padding: 0;
+    font-family: 'Domine', sans-serif;
+}
+
+.bank-transfer-container {
+    max-width: 520px;
+    margin: 50px auto 60px auto;
+    padding: 40px 40px 50px 40px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 6px 28px rgba(42, 122, 226, 0.16);
+    color: #333;
+}
+
+.bank-transfer-container h2 {
+    color: #2a7ae2;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.bank-transfer-container p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.45;
+}
+
+.bank-transfer-container ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.bank-transfer-container ul li {
+    background-color: #f4f8ff;
+    border: 1.5px solid #d0e2ff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #1e3c72;
+    box-shadow: inset 0 2px 5px rgba(42, 122, 226, 0.1);
+}
+
+/* Formulario */
+
+.bank-transfer-container form div {
+    margin-bottom: 22px;
+}
+
+.bank-transfer-container label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.bank-transfer-container select,
+.bank-transfer-container input[type="text"],
+.bank-transfer-container input[type="date"],
+.bank-transfer-container input[type="number"],
+.bank-transfer-container input[type="file"] {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 1rem;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+}
+
+.bank-transfer-container select:focus,
+.bank-transfer-container input[type="text"]:focus,
+.bank-transfer-container input[type="date"]:focus,
+.bank-transfer-container input[type="number"]:focus,
+.bank-transfer-container input[type="file"]:focus {
+    border-color: #2a7ae2;
+    outline: none;
+}
+
+/* Mensajes de error */
+
+.bank-transfer-container span {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Botón enviar */
+
+.bank-transfer-container input[type="submit"] {
+    width: 100%;
+    padding: 14px 0;
+    margin-top: 15px;
+    background-color: #2a7ae2;
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bank-transfer-container input[type="submit"]:hover {
+    background-color: #1b4f9e;
+}
+
+.back-link {
+    display: block;
+    margin: 40px auto 0;
+    background-color: #2a7ae2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 200px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    background-color: #1b4f9e;
+}
+
+.error-message,
+.success-message {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 20px;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: slideUpFade 0.5s forwards;
+}
+
+.error-message {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.success-message {
+    background-color: #27ae60;
+    color: white;
+}
+
+@media (max-width: 520px) {
+    .bank-transfer-container {
+        margin: 30px 15px 40px 15px;
+        padding: 30px 25px 40px 25px;
+        max-width: 100%;
+    }
+}

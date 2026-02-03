@@ -1,0 +1,91 @@
+{% extends 'layout/base_bank_transfer.html' %}
+
+{% block content %}
+
+    <div class="bank-transfer-container">
+
+        <h2>Bank transfer for plan: {{ plan.name }}</h2>
+
+        <p>Please make the transfer to any of the following banks:</p>
+
+        <ul>
+            <li>
+                <strong>Wells Fargo</strong><br>
+                Cuenta: 123456789<br>
+                SWIFT: WFBIUS6S
+            </li>
+            <li>
+                <strong>Bank of America</strong><br>
+                Cuenta: 987654321<br>
+                SWIFT: BOFAUS3N
+            </li>
+            <li>
+                <strong>Banesco Panama</strong><br>
+                Cuenta: 1122334455<br>
+                SWIFT: OTROSXX
+            </li>
+        </ul>
+
+        <p>Once the transfer has been made, please complete the following form to upload the receipt and transfer details. This will help us process your payment faster.</p>
+
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('admin.bank_transfer', plan_name=plan.name) }}">
+            
+            {{ form.hidden_tag() }}
+
+            <div>
+                {{ form.bank_used.label }}<br>
+                {{ form.bank_used() }}
+                {% for error in form.bank_used.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <div>
+                {{ form.transfer_date.label }}<br>
+                {{ form.transfer_date() }}
+                {% for error in form.transfer_date.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <div>
+                {{ form.amount_transferred.label }}<br>
+                {{ form.amount_transferred() }}
+                {% for error in form.amount_transferred.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <div>
+                {{ form.receipt.label }}<br>
+                {{ form.receipt() }}
+                {% for error in form.receipt.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <div>
+                {{ form.submit() }}
+            </div>
+        
+        </form>
+
+    </div>
+
+    <a class="back-link" href="{{ url_for('admin.payment_options', plan_name=plan.name) }}">Back</a>
+
+    {% if form.errors %}
+        {% for field, errors in form.errors.items() %}
+            {% for error in errors %}
+                <p class="error-message">{{ field }} - {{ error }}</p>
+            {% endfor %}
+        {% endfor %}        
+    {% endif %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="success-message"> {{ message }} </p>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

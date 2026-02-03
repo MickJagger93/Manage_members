@@ -1,0 +1,151 @@
+body {
+    background-image: url('/static/img/Screenshot_32.png'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;           
+    margin: 0;
+    padding: 0;
+    font-family: 'Domine', sans-serif;
+    color: #fff;
+}
+
+.reset-container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.reset-container form {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    padding: 40px 50px;
+    width: 360px;
+    max-width: 90vw;
+    box-sizing: border-box;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.reset-container .title {
+    color: #fff;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Botón de enviar */
+.btn-style {
+    width: 100%;
+    background-color: #2a7ae2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-style:hover {
+    background-color: #1b4f9e;
+}
+
+.floating-label {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.floating-label input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,0.7);
+    background: transparent;
+    padding: 8px 8px 8px 0;
+    color: white;
+    font-size: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.floating-label input:focus,
+.floating-label input:not(:placeholder-shown) {
+    outline: none;
+    border-bottom-color: #2a7ae2;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+    top: -18px;
+    font-size: 0.75rem;
+    color: #2a7ae2;
+}
+
+.centered-link {
+    color: #eee;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 12px;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.centered-link:hover {
+    color: #2a7ae2;
+}
+
+.error-message,
+.success-message {
+    width: 100%;
+    max-width: 360px;
+    padding: 12px 20px;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: slideUpFade 0.5s forwards;
+}
+
+.error-message {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.success-message {
+    background-color: #27ae60;
+    color: white;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,29 @@
+{% extends 'layout/base_payment_receipt.html' %}
+
+{% block content %}
+     
+     <div class="payment-receipt-container">
+
+          <h2>Payment receipt #{{ payment.id }}</h2>
+
+          <p data-label="Date">{{ payment.date.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+          <p data-label="Plan">{{ payment.plan_name }}</p>
+          <p data-label="Amount">${{ '%.2f'|format(payment.amount) }}</p>
+          <p data-label="Status">{{ payment.status }}</p>
+          <p data-label="Method">{{ payment.method if payment.method else 'No especificado' }}</p>
+
+          <a href="{{ url_for('admin.dashboard') }}">Back to dashboard</a>
+          
+     </div>
+
+     {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-message-container">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layout/base_dashboard.html' %}
+
+{% block content %}
+
+    <h2 class="title">Dashboard</h2>
+
+    <p class="description">Please select an option</p>
+
+    <div class="main-container">
+        <div class="subs-container">
+            <a class="dashboard-btn" href="{{ url_for('admin.subscription') }}">Subscription</a>
+        </div>
+        
+        <div class="payment-container">
+            <a class="dashboard-btn" href="{{ url_for('admin.payment_history') }}">Payment History</a>
+        </div>
+        
+        <div class="profile-container">
+            <a class="dashboard-btn" href="{{ url_for('user.profile') }}">Profile</a>
+        </div>
+        
+        <div class="plans_container">
+            <a class="dashboard-btn" href="{{ url_for('admin.view_plans') }}">View plans</a>
+        </div>
+    </div> 
+        
+    <form action="{{ url_for('auth.logout') }}" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit" class="btn-style">Logout</button>
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'layout/base_login.html' %}
+
+{% block content %}
+
+    <div class="login-container">
+
+        <h2 class="title">Log in</h2>
+
+        <form method="POST" action="{{ url_for('auth.login') }}">
+
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+
+                <div class="floating-label">
+                    {{ form.email(placeholder=" ") }}
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="floating-label" style="position: relative;">
+                    {{ form.password(placeholder=" ", id="password-input") }}
+                    <label for="password">Password</label>
+                    <button type="button" id="toggle-password" aria-label="Show password" style="position: absolute; 
+                    right: 10px; top: 50%; transform: translateY(-50%); background:none; border:none; cursor:pointer;">👁️</button>
+                </div>
+
+                <button type="submit" class="btn-style">Log in</button>
+
+        </form>
+
+        <p>
+            <a class="centered-link" href="{{ url_for('main.index') }}">Back to home</a>
+        </p>
+
+        <p>
+            <a class="centered-link" href="{{ url_for('auth.reset_password') }}">Forgot your password? Reset here</a>
+        </p>
+
+        {% if form.errors %}
+            {% for field, errors in form.errors.items() %}
+                {% for error in errors %}
+                    <p class="error-message">{{ field }} - {{ error }}</p>
+                {% endfor %}
+            {% endfor %}        
+        {% endif %}
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="success-message"> {{ message }} </p>
+            {% endfor %}
+        {% endif %}
+
+        <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+    </div>
+
+{% endblock %}

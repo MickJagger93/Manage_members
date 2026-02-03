@@ -1,0 +1,22 @@
+{% extends 'layout/base_p_options.html' %}
+
+{% block content %}
+
+    <h2 class="title">Payment Options</h2>
+
+    <p class="description">Choose your payment method</p>
+
+    <div class="payment-options-container">
+        
+        <div class="credit-card">
+            <a href="{{ url_for('admin.credit_card', plan_name=plan.name) }}">Credit Card</a>
+        </div>
+
+        <div class="bank-transfer">
+            <a href="{{ url_for('admin.bank_transfer', plan_name=plan.name) }}">Bank Transfer</a>
+        </div>
+    </div>
+
+    <a href="{{ url_for('admin.dashboard') }}" class="back-link">Back to dashboard</a>
+
+{% endblock %}

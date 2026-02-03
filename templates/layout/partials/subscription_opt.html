@@ -1,0 +1,42 @@
+{% extends 'layout/base_subscription.html' %}
+
+{% block content %}
+
+    <h1 class="title">Subscription Options</h1>
+
+    <div class="cards-container">
+        <div>
+            <a class="subs-link" href="{{ url_for('admin.payment_options', plan_name='weekly') }}">Weekly</a>
+            <hr>
+            <p class="text">Weekly 9.99$</p>
+            <hr>
+        </div>
+
+        <div>
+            <a class="subs-link" href="{{ url_for('admin.payment_options', plan_name='monthly') }}">Monthly</a>
+            <hr>
+            <p class="text">Monthly 29.9$</p>
+            <hr>
+        </div>
+
+        <div>
+            <a class="subs-link" href="{{ url_for('admin.payment_options', plan_name='annual') }}">Annual</a>
+            <hr>
+            <p class="text">Annual 299.9$</p>
+            <hr>
+        </div>
+    </div>
+        
+    <a class="back-link" href="{{ url_for('admin.dashboard') }}">Back to dashboard</a>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-message-container">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'layout/base_reset.html' %}
+
+{% block content %}
+
+    <div class="reset-container">
+
+        <h2 class="title">Reset password</h2>
+
+            <form method="POST" action="{{ url_for('auth.reset_password') }}">
+                {{ form.hidden_tag() }}
+                {{ form.csrf_token }}
+
+                <div class="floating-label">
+                    {{ form.email(placeholder=" ") }}
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="floating-label" style="position: relative;">
+                    {{ form.new_password(placeholder=" ", id="new-password-input") }}
+                    <label for="new_password">New Password</label>
+                </div>
+
+                <div class="floating-label" style="position: relative;">
+                    {{ form.confirm_new_password(placeholder=" ", id="confirm-new-password-input") }}
+                    <label for="confirm_new_password">Confirm New Password</label>
+                </div>           
+
+                <button type="submit" class="btn-style">Reset password</button>
+    
+        </form>
+
+        <p>
+            <a class="centered-link" href="{{ url_for('auth.login') }}">Back to login</a>
+        </p>
+
+        {% if form.errors %}
+            {% for field, errors in form.errors.items() %}
+                {% for error in errors %}
+                    <p class="error-message">{{ field }} - {{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="success-message"> {{ message }} </p>
+            {% endfor %}
+        {% endif %}
+
+        <script src="{{ url_for('static', filename='js/reset.js') }}"></script>
+
+    </div>
+
+{% endblock %}

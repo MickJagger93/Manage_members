@@ -1,0 +1,86 @@
+body {
+    background-image: url('/static/img/Screenshot_33.png'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;           
+    margin: 0;
+    padding: 0;
+    font-family: 'Domine', sans-serif;
+}
+
+.profile-container {
+    max-width: 480px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 40px;
+    box-shadow: 0 6px 20px rgba(42, 122, 226, 0.15);
+    color: #333;
+}
+
+.profile-container .title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #2a7ae2;
+    text-align: center;
+}
+
+.profile-container p {
+    font-size: 1.1rem;
+    margin: 12px 0;
+    line-height: 1.4;
+}
+
+.profile-container p strong {
+    color: #555;
+    width: 110px;
+    display: inline-block;
+}
+
+.edit-link,
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 26px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-link {
+    background-color: #2a7ae2;
+    color: white;
+    margin-right: 15px;
+}
+
+.edit-link:hover {
+    background-color: #1b4f9e;
+    color: #eee;
+}
+
+.back-link {
+    background-color: #2a7ae2;
+    color: white;
+}
+
+.back-link:hover {
+    background-color: #1b4f9e;
+    color: white;
+}
+
+@media (max-width: 520px) {
+    .profile-container {
+        margin: 20px 15px;
+        padding: 25px 20px;
+        max-width: 100%;
+    }
+    .profile-container p strong {
+        width: 100px;
+    }
+}
